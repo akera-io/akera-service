@@ -1,0 +1,19 @@
+{
+  "name": "akera-service",
+  "version": "1.0.0",
+  "description": "Windows/Linux/Mac service wrapper for Akera components",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/service-test.js"
+  },
+  "optionalDependencies": {
+    "node-linux": "latest",
+    "node-windows": "latest",
+    "node-mac": "latest"
+  },
+  "author": "Radu Nicoara",
+  "license": "ISC",
+  "dependencies": {
+    "rsvp": "^3.2.1"
+  }
+}
