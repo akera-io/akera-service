@@ -1,0 +1,11 @@
+<config>
+	<name>akera</name>
+	<startup>automatic</startup>
+	<description>test de service akera</description>
+	<startScript>C:\ProgramFiles\nodejs\node.exe
+	</startScript>
+	<startArguments>c:\temp\test.js</startArguments>
+	<stopScript>C:\ProgramFiles\nodejs\node.exe
+	</stopScript>
+	<stopArguments>c:\temp\stop.js</stopArguments>
+</config>
