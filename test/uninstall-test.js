@@ -1,10 +1,11 @@
 var svc = require('../lib/service.js');
 var path = require('path');
+var platform = require('os').platform();
 
 var config = {
-   name : 'akera-admin',
+   name : 'akera-test',
    start : {
-      script : 'c:/temp/sample.js',
+      script : platform === 'win32' ? 'c:/temp/sample.js' : path.join(__dirname, 'sample.js'),
       args : 'toto titi'
    },
    path : 'c:/temp',
@@ -13,7 +14,7 @@ var config = {
 
 svc.uninstall(config, function(err) {
    if (err)
-      console.log('uninstall error', err.message);
+      console.log('uninstall error: %s', err.message);
    else
       console.log('service uninstalled');
  });
