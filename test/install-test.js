@@ -2,9 +2,9 @@ var Service = require('../lib/service.js');
 var path = require('path');
 
 var config = {
-  name : 'akera admin',
-  script : path.resolve(__dirname, 'sample.js'),
-  description : 'Akera-admin test service'
+  name : 'test',
+  script : path.join(__dirname, 'sample.js'),
+  description : 'Akera-service test service'
 };
 
 var svc = new Service(config);
