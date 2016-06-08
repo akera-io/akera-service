@@ -9,21 +9,26 @@
   },
   "main": "index.js",
   "scripts": {
+  	"lint": "jshint ./lib",
+    "checkStyle": "jscs ./lib",
+    "pretest": "npm run-script lint && npm run-script checkStyle",
     "test": "node test/service-test.js"
   },
   "dependencies": {
-    "rsvp": "^3.2.1",
     "xmlbuilder": "^8.2.2"
   },
   "optionalDependencies": {
-    "node-linux": "0.1.8",
-    "node-windows": "0.1.11",
-    "node-mac": "0.1.3"
+    "node-linux": "0.1.8"
   },
   "bundledDependencies": [
-    "node-linux",
-    "node-windows",
-    "node-mac"
+    "node-linux"
   ],
+  "devDependencies": {
+    "mocha": "~1.21.4",
+    "should": ">= 5.0",
+    "istanbul": ">= 0.3.6",
+    "jshint": ">= 2.6.0",
+    "jscs": ">= 1.11"
+  },
   "license": "SEE LICENSE IN <LICENSE>"
 }
