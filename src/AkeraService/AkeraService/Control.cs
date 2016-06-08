@@ -25,12 +25,10 @@ namespace Io.Akera.Service
         {
 
             String binFile = new Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase).LocalPath;
-            String baseFile = Path.GetDirectoryName(binFile) + Path.DirectorySeparatorChar +
-            Path.GetFileNameWithoutExtension(binFile);
 
             try
             {
-                ServiceInfo svc = ReadServiceInfo(baseFile + ".xml");
+                ServiceInfo svc = ReadServiceInfo(binFile + ".xml");
 
                 if (svc.Name == null || svc.Name.Trim().Length == 0)
                 {
@@ -134,6 +132,8 @@ namespace Io.Akera.Service
 
                 }
             }
+
+            xmlReader.Close();
 
             return svc;
 
