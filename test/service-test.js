@@ -2,30 +2,18 @@ var Service = require('../lib/service.js');
 var path = require('path');
 
 var config = {
-  name : 'akera-admin',
-  script : path.resolve(__dirname, 'sample.js'),
-  description : 'Akera-admin test service'
+  name : 'test',
+  script : path.join(__dirname, 'sample.js'),
+  description : 'akera-service test'
 };
 
 var svc = new Service(config);
 
-//svc.start().then(function() {
-//  console.log('service started');
-//}, function(err) {
-//  console.log('start error: ' + err);
-//});
-
-svc.uninstall().then(function() {
-   console.log('service uninstalled');
- }, function(err) {
-   console.log('uninstall error: ' + err);
- });
-
-//svc.install().then(function() {
-//  console.log('service installed');
-//  return svc.start();
-//}).then(function() {
-//  console.log('service started');
-//})['catch'](function(err) {
-//  console.log('start error: ' + err);
-//});
+svc.install().then(function() {
+  console.log('test service installed');
+  return svc.uninstall();
+}).then(function() {
+  console.log('test service uninstalled');
+})['catch'](function(err) {
+  console.log(err);
+});
