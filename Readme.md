@@ -1,6 +1,6 @@
 [![Akera Logo](http://akera.io/logo.png)](http://akera.io/)
 
-  Wrapper on platform dependent service/daemon modules.
+  Akera service/daemon module.
 
 ## Installation
 
@@ -18,6 +18,34 @@ $ npm install akera-service
 
   To run the test suite, first install the dependencies, then run `npm test`.
 
+## Quick Start
+
+```javascript
+
+var svc = require('akera-service');
+
+var config = {
+   name : 'akera sample',
+   start : {
+      script : 'c:/temp/service.js',
+      args : 'start'
+   },
+   stop : {
+      script : 'c:/temp/service.js',
+      args : 'stop'
+   },
+   path : 'c:/temp',
+   description : 'Akera sample service'
+};
+
+svc.install(config, function(err) {
+   if (err)
+      console.log('install error', err.message);
+   else 
+      console.log('service installed');
+});
+
+```
 
 ## License
 
