@@ -1,7 +1,7 @@
 {
   "name": "akera-service",
-  "version": "1.0.0",
-  "description": "Windows/Linux/Mac service wrapper for Akera components",
+  "version": "1.0.1",
+  "description": "Akera service/daemon module",
   "homepage": "http://akera.io",
   "author": "Radu Nicoara",
   "publishConfig": {
@@ -21,7 +21,8 @@
     "node-linux": "0.1.8"
   },
   "bundledDependencies": [
-    "node-linux"
+    "node-linux",
+    "xmlbuilder"
   ],
   "devDependencies": {
     "mocha": "~1.21.4",
